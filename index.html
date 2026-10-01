@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CHESS</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <script>
+
+function toggleOpenings() {
+
+    const menu = document.getElementById("opening-menu");
+    const button = document.querySelector(".side-dropdown");
+
+    if (menu.style.maxHeight) {
+
+        
+        menu.style.maxHeight = null;
+        button.classList.remove("open");
+
+    } else {
+
+        menu.style.maxHeight = menu.scrollHeight + "px";
+        button.classList.add("open");
+
+    }
+
+}
+
+</script>
+  <div class="sidebar">
+
+    <div class="sidebar-title">
+        ♟ CHECKY
+    </div>
+
+    <a href="index.html" class="side-link">
+        🏠 HOME
+    </a>
+    <button class="side-dropdown" onclick="toggleOpenings()">
+        📖 OPENINGS
+        <span id="opening-arrow">▼</span>
+    </button>
+
+    <div id="opening-menu" class="side-submenu">
+
+        <a href="openings by white.html">
+            ♙ OPENINGS BY WHITE
+        </a>
+
+        <a href="openings by black.html">
+            ♟ OPENINGS BY BLACK
+        </a>
+
+    </div>
+
+    <a href="endgames.html" class="side-link">
+        ♜ ENDGAMES
+    </a>
+
+    <a href="PRACRICE GAME.html" class="side-link">
+        ⚔ PLAY AGAINST STOCKFISH
+    </a>
+
+</div>
+<div id="board" style="width: 400px"></div>
+<script>
+var board = Chessboard('board', {
+position: 'start'
+});
+</script>
+<script type="module">
+  import { Chess } from 'chess.js'
+</script>
+
+
+
+
+<div class="box">
+    <h1>♟ WELCOME TO CHECKY</h1>
+
+    <p>
+        Welcome to <strong>CHECKY</strong> — a chess guide made for
+        people who are just a little too obsessed with chess.
+    </p>
+
+    <p>
+        This website focuses on <strong>opening theory</strong>,
+        <strong>endgame theory</strong>, and improving your
+        <strong>tactical vision</strong>.
+    </p>
+</div>
+
+
+<div class="box">
+    <h2>📖 OPENINGS</h2>
+
+    <p>
+        Learn the ideas, plans, and variations behind different
+        chess openings.
+    </p>
+
+    <p>
+        The goal isn't to memorize 25 moves of theory just because
+        some grandmaster played it once. Instead, we'll focus on
+        understanding <strong>why</strong> the moves are played.
+    </p>
+
+    <p>
+        Hopefully, you'll also stop getting completely destroyed
+        in the first 10 moves. 😭
+    </p>
+</div>
+
+
+<div class="box">
+    <h2>♜ ENDGAMES</h2>
+
+    <p>
+        Endgames are where all that hard work is supposed to pay off.
+    </p>
+
+    <p>
+        We'll cover important endgame positions, techniques,
+        patterns, and ideas that can help you turn an advantage
+        into an actual win.
+    </p>
+
+    <p>
+        Because having an extra queen is pretty useless if you
+        somehow manage to stalemate your opponent. 💀
+    </p>
+</div>
+
+
+<div class="box">
+    <h2>⚔ MIDDLEGAME</h2>
+
+    <p>
+        Now you might be wondering:
+    </p>
+
+    <h3>What about the middlegame?</h3>
+
+    <p>
+        <strong>DO MORE PUZZLES.</strong> 🧩
+    </p>
+
+    <p>
+        Tactics help improve calculation, pattern recognition,
+        and your ability to spot opportunities during a game.
+    </p>
+
+    <p>
+        For free puzzle practice, check out
+        <a href="https://lichess.org/training" target="_blank">
+            LICHESS PUZZLE TRAINER
+        </a>.
+    </p>
+</div>
+
+
+<div class="box">
+    <h2>🧠 BEFORE YOU START</h2>
+
+    <p>
+        I'm assuming you already know the basic rules of chess.
+    </p>
+
+    <p>
+        You should know:
+    </p>
+
+    <p>
+        ♟ How the pieces move<br>
+        ♟ Castling<br>
+        ♟ En passant<br>
+        ♟ Promotion<br>
+        ♟ Check and checkmate
+    </p>
+
+    <p>
+        Basically, I don't want you asking:
+    </p>
+
+    <p>
+        <em>
+            "How did that pawn just capture something
+            horizontally?" 
+        </em>
+    </p>
+</div>
+
+
+<div class="box">
+    <h2>🚀 LET'S BEGIN</h2>
+
+    <p>
+        This website is made for chess players who want to learn
+        more, understand the game better, and hopefully make fewer
+        questionable moves.
+    </p>
+
+    <p>
+        I'm not Magnus Carlsen.<br>
+        I'm not Stockfish.
+    </p>
+
+    <p>
+        <strong>...or am I? 👀</strong>
+    </p>
+
+    <p>
+        <strong>Welcome to CHECKY.</strong>
+    </p>
+</div>
+</body>
+</html>

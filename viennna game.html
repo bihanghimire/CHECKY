@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>VIENNA!!</title>
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+<link rel="stylesheet" href="style.css">
+    <style>
+
+        #board {
+            width: 400px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<script>
+
+function toggleOpenings() {
+
+    const menu = document.getElementById("opening-menu");
+    const button = document.querySelector(".side-dropdown");
+
+    if (menu.style.maxHeight) {
+
+        
+        menu.style.maxHeight = null;
+        button.classList.remove("open");
+
+    } else {
+
+        menu.style.maxHeight = menu.scrollHeight + "px";
+        button.classList.add("open");
+
+    }
+
+}
+
+</script>
+  <div class="sidebar">
+
+    <div class="sidebar-title">
+        ♟ CHECKY
+    </div>
+
+    <a href="index.html" class="side-link">
+        🏠 HOME
+    </a>
+    <button class="side-dropdown" onclick="toggleOpenings()">
+        📖 OPENINGS
+        <span id="opening-arrow">▼</span>
+    </button>
+
+    <div id="opening-menu" class="side-submenu">
+
+        <a href="openings by white.html">
+            ♙ OPENINGS BY WHITE
+        </a>
+
+        <a href="openings by black.html">
+            ♟ OPENINGS BY BLACK
+        </a>
+
+    </div>
+
+    <a href="endgames.html" class="side-link">
+        ♜ ENDGAMES
+    </a>
+
+    <a href="tactics.html" class="side-link">
+        ⚔ TACTICS
+    </a>
+
+</div>    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+
+
+<H1> VIENNA GAME !!!!! </H1>
+<div class="box"> the vienna game is a variation of the kings pawn game that rises after the moves <div class="moves"> 1 e4 e5  2 Nc3</div>  while significantly less common than the popular Nf3 Nc3 is only played in a small number of high level matches . that doesnt mean its bad for you tho . it is good for anyone under 2000 FIDE rating and is an  intriguing choice for players looking to take their opponents out of familiar territory early on. </div>
+<h2> SOME MORE YAP ABOUT VIENNA GAME </h2>
+
+<img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/ViennaGame/Vienna-Game-moves.png" height="300" width="300">
+<div class="box"> 
+At first glance, 2.Nc3 is a quiet and non-aggressive move. It doesn't immediately challenge Black but offers flexibility in White's development. One of the key ideas behind this move is preparing for the aggressive 3.f4, leading to the Vienna Gambit. This line allows White to seize the initiative and open lines for a swift attack. 
+</div>
+
+<div class="box"> However, White isn't obligated to pursue an aggressive approach. The Vienna Game can transpose into more subdued openings, such as the Petrov Three Knights Game or even the Four Knights Game. This flexibility means the Vienna Game has something to offer both aggressive and positional players. </div>
+<HR>
+<H1> TIME FOR THE FUN PART1 <BR> "OPENING MOVES AND MAIN LINES"</H1>
+    <div class="moves">After the initial moves: 1. e4 e5 <br> 2. Nc3</div>
+    <br> <img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/ViennaGame/Vienna-Game-starting-position.png" height="300" width="300">
+    <div class="moves"> Black has several options. One common response is: 2... Nf6 </div>
+    <hr>
+    <img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/ViennaGame/Vienna-Game-2Nf6.png" height="300" width="300">
+    <div class="moves"> This leads to the Vienna Game: Falkbeer Variation, where the game can proceed with: 3. Bc4</div>
+  <hr> 
+    <img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/ViennaGame/Vienna-Game-3Bc4.png" height="300" width="300">
+<div class="moves"> Alternatively, White can opt for the aggressive Vienna Gambit with: 3. f4</div>
+<hr> 
+<img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/ViennaGame/Vienna-Game-3f4.png" height="300" width="300">
+<hr> <div class="moves"> This move challenges Black's central pawn on e5 and can lead to dynamic play</div>
+
+<H3> Frankenstein-Dracula Variation </H3>
+<BR> 
+    <div class="box"> one famous trap in the vienna game is this one which arises after:<br> 1. e4 e5 2. Nc3 Nf6 3. Bc4 Nxe4 4. Qh5
+     </div>
+     <img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/ViennaGame/Frankenstein-Dracula-Variation.png" height="300" width="300">
+     <div class="box"> Here, White threatens Qxf7#, and Black must respond carefully to avoid immediate defeat </div>
+     <div class="moves"> below is a common line of moves you see in this variation</div>
+     
+
+     <div id="board1" style="width: 400px;"></div>
+
+<button onclick="nextMove1()">Next Move</button>
+
+<script>
+const game1 = new Chess();
+
+const moves1 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "Bc4", "Nxe4",
+    "Qh5", "Nd6",
+    "Bb3", "Nc6",
+    "Nb5", "g6",
+    "Qf3", "f5",
+    "Qd5", "Qe7",
+    "Nxc7+", "Kd8",
+    "Nxa8", "b6"
+];
+
+let moveNumber1 = 0;
+
+const board1 = Chessboard("board1", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove1() {
+    if (moveNumber1 >= moves1.length) {
+        return;
+    }
+
+    game1.move(moves1[moveNumber1]);
+
+    moveNumber1++;
+
+    board1.position(game1.fen(), true);
+}
+</script>
+
+<h3> MIESES VARIATION </h3>
+
+<div class="box"> It starts with the Falkbeer Variation, and White goes for an early 3.g3 move. This opening aims to have a strategic and possibly positional battle where White utilizes their g2-Bishop on the long ‘a8-h1‘ diagonal once the pawns are traded after Black plays the d5-pawn push. </div>
+
+<div class="box"> a common sequence in this variation can be
+    <div class="moves">  1. e4 e5<br>
+2. Nc3 Nf6<br>
+3. g3 Bc5<br>
+4. Bg2 Nc6<br>
+5. d3 O-O<br>
+6. Nge2 a6<br>
+7. O-O d6<br>
+8. h3
+    </div></div>
+<div id="board2" style="width: 400px;"></div>
+
+<button onclick="nextMove2()">Next Move</button>
+
+<script>
+const game2 = new Chess();
+
+const moves2 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "g3", "Bc5",
+    "Bg2", "Nc6",
+    "d3", "O-O",
+    "Nge2", "a6",
+    "O-O", "d6",
+    "h3"
+];
+
+let moveNumber2 = 0;
+
+const board2 = Chessboard("board2", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove2() {
+    if (moveNumber2 >= moves2.length) {
+        return;
+    }
+
+    game2.move(moves2[moveNumber2]);
+
+    moveNumber2++;
+
+    board2.position(game2.fen(), true);
+}
+</script>
+  
+<hr> <div class="box"> another one of the sequence of moves can be <div class="moves"> e4 e5<br>
+2. Nc3 Nf6<br>
+3. g3 Bc5<br>
+4. Bg2 Nc6<br>
+5. d3 O-O<br>
+6. Nge2 a6<br>
+7. O-O d6<br>
+8. h3 b5<br>
+9. Kh2 Ba7<br>
+10. f4
+ </div></div>
+
+
+
+ <div id="board3" style="width: 400px;"></div>
+
+<button onclick="nextMove3()">Next Move</button>
+
+<script>
+const game3 = new Chess();
+
+const moves3 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "g3", "Bc5",
+    "Bg2", "Nc6",
+    "d3", "O-O",
+    "Nge2", "a6",
+    "O-O", "d6",
+    "h3", "b5",
+    "Kh2", "Ba7",
+    "f4"
+];
+
+let moveNumber3 = 0;
+
+const board3 = Chessboard("board3", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove3() {
+    if (moveNumber3 >= moves3.length) {
+        return;
+    }
+
+    game3.move(moves3[moveNumber3]);
+
+    moveNumber3++;
+
+    board3.position(game3.fen(), true);
+}
+</script>
+
+<div class="note"> IAM NOT ADDING MORE AS NOT MUCH THEORY IS NEEDED FOR THIS </div>
+<h2> KEY STRATEGIES AND IDEAS </h2>
+<div class="box">Control of the Center: By playing Nc3, White supports the pawn on e4 and prepares for possible central expansions. <br> <br>
+Flexible Development: The Vienna Game allows for various setups, including fianchettoing the bishop or launching an early kingside attack.<br> <br>
+Surprise Value: Not as commonly played as other openings, the Vienna Game can catch opponents off-guard. </div>
+
+
+
+<H1> SOME EXAMPLES GAMES WITH VIENNA</H1>
+<hr>
+<H3> WHITE : Firouzja, Alireza (2759) 
+    <BR> BLACK: Carlsen, Magnus (2847)
+        <BR> SCORE: 1-0
+
+
+            <div id="board4" style="width: 400px;"></div>
+
+<button onclick="nextMove4()">Next Move</button>
+
+<script>
+const game4 = new Chess();
+
+const moves4 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "Bc4", "Bc5",
+    "d3", "d6",
+    "f4", "Nc6",
+    "Nf3", "a6",
+    "Bb3", "h6",
+    "Qe2", "Bg4",
+    "fxe5", "dxe5",
+    "Be3", "Nd4",
+    "Qf2", "Bxf3",
+    "gxf3", "Nh5",
+    "O-O-O", "Nf4",
+    "Kb1", "Nxb3",
+    "Bxc5", "Nxc5",
+    "Qxc5", "Qd6",
+    "Qxd6", "cxd6",
+    "d4", "O-O-O",
+    "Rd2", "Ne6",
+    "Ne2", "Rhf8",
+    "d5", "Ng5",
+    "Rd3", "Nh3",
+    "Rc1", "f5",
+    "c4", "fxe4",
+    "fxe4", "Rf2",
+    "Nc3", "Rxh2",
+    "c5", "Nf4",
+    "Rdd1", "Kb8",
+    "c6", "Rc8",
+    "Na4", "Re2",
+    "Nb6", "Rc7",
+    "Nd7+", "Ka7",
+    "Rc4", "h5",
+    "Rg1", "g6",
+    "a4", "h4"
+];
+
+let moveNumber4 = 0;
+
+const board4 = Chessboard("board4", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove4() {
+    if (moveNumber4 >= moves4.length) {
+        return;
+    }
+
+    game4.move(moves4[moveNumber4]);
+
+    moveNumber4++;
+
+    board4.position(game4.fen(), true);
+}
+</script>
+
+<HR>
+<h3> WHITE: Nakamura, Hikaru (2802)
+	<BR> BLACK: Firouzja, Alireza (2767)
+ <BR> SCORE: 1-0
+</h3>
+<div id="board5" style="width: 400px;"></div>
+
+<button onclick="nextMove5()">Next Move</button>
+
+<script>
+const game5 = new Chess();
+
+const moves5 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "Bc4", "Nxe4",
+    "Qh5", "Nd6",
+    "Bb3", "Be7",
+    "Qxe5", "O-O",
+    "Nf3", "Nc6",
+    "Qf4", "Na5",
+    "O-O", "b5",
+    "Nd5", "Bb7",
+    "Nxe7+", "Qxe7",
+    "Re1", "Qf6",
+    "Qxf6", "gxf6",
+    "Nh4", "Rfe8",
+    "Kf1", "Rxe1+",
+    "Kxe1", "Re8+",
+    "Kf1", "c5",
+    "d3", "c4",
+    "dxc4", "Ndxc4",
+    "f3", "d5",
+    "Nf5", "Bc8",
+    "Nd4", "Bd7",
+    "Bxc4", "Nxc4",
+    "b3", "Nd6",
+    "Bf4", "Nf5",
+    "Ne2", "b4",
+    "Kf2", "Bb5",
+    "Ng1", "Rc8",
+    "Rc1", "Nd4",
+    "Bd6", "Rxc2+",
+    "Rxc2", "Nxc2",
+    "Nh3", "d4",
+    "Bf4", "d3",
+    "Bd2", "Kf8",
+    "Nf4", "Ke7",
+    "Nd5+", "Ke6",
+    "Nc7+", "Kd7",
+    "Nxb5", "a6",
+    "Nd4", "Nxd4",
+    "Ke3", "Nc6",
+    "Kxd3", "Kd6",
+    "Kc4", "a5",
+    "Bf4+", "Kd7",
+    "Kb5", "h5",
+    "Bg3", "f5",
+    "Bf2", "f4",
+    "h4", "Ne5",
+    "Kxa5", "Nd3",
+    "Bd4", "Kc6",
+    "Ba7", "f5",
+    "Bg1", "Kd6",
+    "Kb5", "Kd5",
+    "Ba7", "Ne1",
+    "Kxb4", "Nxg2",
+    "Bf2", "Ne3",
+    "a4", "Ng4",
+    "fxg4", "fxg4",
+    "a5", "g3",
+    "Be1", "Ke4",
+    "a6", "Kf3",
+    "a7", "Ke2",
+    "Bxg3", "fxg3",
+    "a8=Q"
+];
+
+let moveNumber5 = 0;
+
+const board5 = Chessboard("board5", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove5() {
+    if (moveNumber5 >= moves5.length) {
+        return;
+    }
+
+    game5.move(moves5[moveNumber5]);
+
+    moveNumber5++;
+
+    board5.position(game5.fen(), true);
+}
+</script>
+
+<HR> 
+<H2> THE FOLLOWING GAMES DO NOT HAVE THE PLAYERS NAME</H2>
+
+
+<HR>
+<div id="board6" style="width: 400px;"></div>
+
+<button onclick="nextMove6()">Next Move</button>
+
+<script>
+const game6 = new Chess();
+
+const moves6 = [
+    "e4", "e5",
+    "Nc3", "f5",
+    "exf5", "Nf6",
+    "g4", "d5",
+    "g5", "Bc5",
+    "gxf6", "O-O",
+    "Qg4", "Rxf6",
+    "Nxd5", "Rxf5",
+    "Ne3", "Rf4",
+    "Qg3", "Nc6",
+    "Nh3", "Bxh3",
+    "Bxh3", "Nd4",
+    "Rf1", "Qd6",
+    "f3", "Raf8",
+    "Bg4", "e4",
+    "c3", "Nc6",
+    "Ng2", "Ne5",
+    "Nxf4", "Rxf4",
+    "d4", "Nd3+",
+    "Ke2", "Qa6",
+    "Be6+", "Kh8",
+    "Bxf4", "Nxf4+",
+    "Ke3", "Qd3+",
+    "Kxf4", "Bd6+",
+    "Kg4", "Bxg3",
+    "hxg3", "exf3"
+];
+
+let moveNumber6 = 0;
+
+const board6 = Chessboard("board6", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove6() {
+    if (moveNumber6 >= moves6.length) {
+        return;
+    }
+
+    game6.move(moves6[moveNumber6]);
+
+    moveNumber6++;
+
+    board6.position(game6.fen(), true);
+}
+</script>
+
+<HR>
+    <div id="board7" style="width: 400px;"></div>
+
+<button onclick="nextMove7()">Next Move</button>
+
+<script>
+const game7 = new Chess();
+
+const moves7 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "f4", "d5",
+    "fxe5", "Nxe4",
+    "Nf3", "Be7",
+    "Be2", "O-O",
+    "O-O", "Nc6",
+    "d3", "Bc5+",
+    "d4", "Bb6",
+    "Na4", "Bf5",
+    "Nxb6", "axb6",
+    "Be3", "Bg6",
+    "Qe1", "Qe7",
+    "c3", "f6",
+    "Bb5", "fxe5",
+    "Bxc6", "bxc6",
+    "Nxe5", "Rxf1+",
+    "Qxf1", "c5",
+    "Nxg6", "hxg6",
+    "dxc5", "bxc5",
+    "Qd3", "c6",
+    "a3", "Qb7",
+    "Qc2", "c4",
+    "Rf1", "Rb8",
+    "Bc1", "Qb6+",
+    "Kh1", "Rf8",
+    "Rxf8+", "Kxf8",
+    "g3", "Qf2",
+    "Qxf2+", "Nxf2+",
+    "Kg2", "Nd3",
+    "a4", "Ke7",
+    "a5", "Kd7",
+    "Be3", "c5",
+    "Kh3", "Kc6",
+    "a6", "Kb6",
+    "Kg4", "Kxa6",
+    "Kg5", "Kb5",
+    "Kxg6", "Nxb2",
+    "Kxg7", "Nd1",
+    "Bd2", "Nxc3",
+    "Bxc3", "d4",
+    "Be1", "c3",
+    "h4", "Kc4",
+    "h5", "d3",
+    "Bxc3", "Kxc3",
+    "h6", "d2",
+    "h7", "d1=Q",
+    "h8=Q", "Qd4+",
+    "Kh7", "Qxh8+",
+    "Kxh8", "Kd4"
+];
+
+let moveNumber7 = 0;
+
+const board7 = Chessboard("board7", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove7() {
+    if (moveNumber7 >= moves7.length) {
+        return;
+    }
+
+    game7.move(moves7[moveNumber7]);
+
+    moveNumber7++;
+
+    board7.position(game7.fen(), true);
+}
+</script>
+
+<HR>
+
+<div id="board8" style="width: 400px;"></div>
+
+<button onclick="nextMove8()">Next Move</button>
+
+<script>
+const game8 = new Chess();
+
+const moves8 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "f4", "d5",
+    "fxe5", "Nxe4",
+    "Nf3", "Bg4",
+    "Be2", "Nc6",
+    "d3", "Bxf3",
+    "Bxf3", "Qh4+",
+    "g3", "Nxg3",
+    "hxg3", "Qxg3+",
+    "Kf1", "Bc5",
+    "d4", "Bxd4",
+    "Qe2", "O-O-O",
+    "Bxd5", "Rhe8",
+    "Qf3", "Qxe5",
+    "Bf4", "Qf6",
+    "Bxc6", "bxc6",
+    "Ne4", "Qf5",
+    "Ng3", "Qb5+",
+    "Kg2", "g5",
+    "Qg4+", "f5",
+    "Qxg5", "Rg8",
+    "Qh5", "Rg4",
+    "Rhf1", "Bf6",
+    "Qf7", "Rd2+",
+    "Bxd2", "Qe2+",
+    "Rf2", "Rxg3+",
+    "Kxg3", "Bh4+",
+    "Kh3", "Qg4+",
+    "Kh2", "Bxf2",
+    "Qe6+", "Kd8",
+    "Bg5+"
+];
+
+let moveNumber8 = 0;
+
+const board8 = Chessboard("board8", {
+    position: "start",
+
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove8() {
+    if (moveNumber8 >= moves8.length) {
+        return;
+    }
+
+    game8.move(moves8[moveNumber8]);
+
+    moveNumber8++;
+
+    board8.position(game8.fen(), true);
+}
+</script>
+<HR>
+
+
+    <div id="board9" style="width: 400px;"></div>
+
+<button onclick="nextMove9()">Next Move</button>
+
+<script>
+const game9 = new Chess();
+
+const moves9 = [
+    "e4", "e5",
+    "Nc3", "Nf6",
+    "f4", "d5",
+    "fxe5", "Nxe4",
+    "Nf3", "Be7",
+    "d4", "O-O",
+    "Bd3", "f5",
+    "exf6", "Bb4",
+    "O-O", "Bxc3",
+    "bxc3", "Rxf6",
+    "c4", "Bg4",
+    "cxd5", "Bxf3",
+    "Qxd5", "Nc3",
+    "Qe1", "Nxd5",
+    "Kh1", "Nf4",
+    "Bc4", "Kh8",
+    "Qe4", "Qd6",
+    "Qxb7", "Nc6",
+    "Qxa8+", "Rf8",
+    "Bxf4", "Qf6",
+    "Be5"
+];
+
+let moveNumber9 = 0;
+
+const board9 = Chessboard("board9", {
+    position: "start",
+    pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove9() {
+    if (moveNumber9 >= moves9.length) {
+        return;
+    }
+
+    game9.move(moves9[moveNumber9]);
+    moveNumber9++;
+
+    board9.position(game9.fen(), true);
+}
+</script>
+
+<div class="note"> THIS MUCH GAMES FOR NOW . MORE WILL BE ADDED LATER</div>
+

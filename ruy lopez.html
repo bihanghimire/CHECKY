@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title> RUY LOPEZ!!</title>
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+<link rel="stylesheet" href="style.css">
+    <style>
+
+        #board {
+            width: 400px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<BODY>
+ <script>
+
+function toggleOpenings() {
+
+    const menu = document.getElementById("opening-menu");
+    const button = document.querySelector(".side-dropdown");
+
+    if (menu.style.maxHeight) {
+
+        
+        menu.style.maxHeight = null;
+        button.classList.remove("open");
+
+    } else {
+
+        menu.style.maxHeight = menu.scrollHeight + "px";
+        button.classList.add("open");
+
+    }
+
+}
+
+</script>
+  <div class="sidebar">
+
+    <div class="sidebar-title">
+        ♟ CHECKY
+    </div>
+
+    <a href="index.html" class="side-link">
+        🏠 HOME
+    </a>
+    <button class="side-dropdown" onclick="toggleOpenings()">
+        📖 OPENINGS
+        <span id="opening-arrow">▼</span>
+    </button>
+
+    <div id="opening-menu" class="side-submenu">
+
+        <a href="openings by white.html">
+            ♙ OPENINGS BY WHITE
+        </a>
+
+        <a href="openings by black.html">
+            ♟ OPENINGS BY BLACK
+        </a>
+
+    </div>
+
+    <a href="endgames.html" class="side-link">
+        ♜ ENDGAMES
+    </a>
+
+    <a href="tactics.html" class="side-link">
+        ⚔ TACTICS
+    </a>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+</div>
+
+
+<H1> RUY LOPEZ!!!!!</H1>
+
+
+<div class="box"> Ruy Lopez, one of the oldest and most enduring chess openings in the history of the game. Often referred to as the 'Spanish Opening,' the Ruy Lopez has been a favorite among Grandmasters and amateur players alike for centuries, and it remains as one of the most played openings for White among the elite.</div>
+
+<img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/RuyLopez/Ruy-Lopez-Opening.jpg" height="300" width="300">
+<div class="box">This opening not only offers a solid foundation for White but also presents a variety of challenging responses for Black. this page  aims to explore the nuances, strategies, and variations that make the Ruy Lopez an essential part of any chess player's repertoire.<br> 
+<br> Whether you're new to chess or looking to refine your game, this page is designed to equip you with the skills to master this classic opening.
+</div>
+
+
+<h2> UNDERSTANDING THE FUNDAMENTALS OF RUY LOPEZ</h2>
+
+<div class="moves"> The Ruy Lopez opening typically begins with the moves 1.e4 e5 2.Nf3 Nc6 3.Bb5, aiming to control the center and prepare for quick development. </div>
+<div class="moves">For White, the goals include:
+<br> <br> <br>Exerting pressure on e5,<br> <br>
+Preparing to castle, and <br> <br>
+Ideally creating a pawn majority in the center.</div>
+
+<div class="box"> Black, on the other hand, seeks counterplay through moves like ...a6 followed by ...Nf6, intending to challenge White's setup. The strategic complexity arises not only from the choice of moves but also the underlying plans they facilitate. </div>
+ <img src="https://d2rnvyacaewvx6.cloudfront.net/images/articles/RuyLopez/image24.png" height="300" width="300">
+ 
+ <br>
+ <div class="box"> Understanding these fundamentals will offer you the foundational knowledge needed to explore the depth of this enduring opening.</div>
+
+
+ <h1> MAIN LINES IN THE RUY LOPEZ</h1>
+
+ <h3> CLOSED (MORPHY DEFENSE) </h3>
+<div class="box"> the closed system contains moves like  3...a6 4.Ba4 Nf6 which can lead to intricate middlegames </div>
+<div class="moves"> the moves are : 1.e4 e5  <br>2.Nf3 Nc6 <br>3.Bb5 ...a6 <br> 4.Ba4 Nf6 <br> 5.O-O Be7 <br> 6.Re1 b5 <br> 7.Bb3 d6<br>  8.c3 </div>
+
+
+<div id="board1" style="width: 400px;"></div>
+
+<button onclick="nextMove1()">Next Move</button>
+
+<script>
+const game1 = new Chess();
+
+const moves1 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Be7",
+  "Re1", "b5",
+  "Bb3", "d6",
+  "c3", "O-O",
+  "h3", "Na5",
+  "Bc2", "c5",
+  "d4"
+];
+
+let moveNumber1 = 0;
+
+const board1 = Chessboard("board1", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove1() {
+  if (moveNumber1 >= moves1.length) {
+    return;
+  }
+
+  game1.move(moves1[moveNumber1]);
+
+  moveNumber1++;
+
+  board1.position(game1.fen(), true);
+}
+</script>
+<div class="box"> this is the main lane played after the 8th move <br>
+    <br>White prepares d4, maneuvers Nb1-d2-f1-g3, and plays for a slow kingside attack. Rich positional battles with many branches (Breyer, Chigorin, Zaitsev).
+</div>
+
+<h4> SOME VARIATIONS OF THE MORPHY DEFENSE  </h4>
+<BR> 
+    <H4> 
+    EXCHANGE VARIATION- 4 Bxc6</H4>  
+    <DIV class="box">White hands over the bishop pair to wreck Black’s pawns. Once 4.Bxc6 occurs, Black gains a Bishop pair advantage. The primary aim of this idea is to break the pin on c6 by attacking the Bishop.</DIV>   
+    
+<div id="board2" style="width: 400px;"></div>
+
+<button onclick="nextMove2()">Next Move</button>
+
+<script>
+const game2 = new Chess();
+
+const moves2 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Bxc6", "dxc6"
+];
+
+let moveNumber2 = 0;
+
+const board2 = Chessboard("board2", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove2() {
+  if (moveNumber2 >= moves2.length) {
+    return;
+  }
+
+  game2.move(moves2[moveNumber2]);
+
+  moveNumber2++;
+
+  board2.position(game2.fen(), true);
+}
+</script>
+
+
+
+<div class="box"> Black’s doubled c-pawns look frail, and in the long endgame they can be. In return Black gets the two bishops and a firm grip on the dark squares <br>
+White’s plan is plain: trade down, reach an ending, and grind the structure
+</div>
+
+<h5> Ba4 LINE </h5>
+<BR> 
+    <div class="box"> Usually, the most effective plan after 3…a6 is playing 4. Ba4 to claim a slight edge as White. After playing 4. Ba4 Black possesses several choices available, however 4…Nf6 is frequently played as it looks to dominate the central space. Other popular moves include 4…d6 and 4…b5.</div>
+    <div class="box"> White put their King into safety and brought their Rook to e1 after 4…Nf6 and prepared d4, aiming to launch some sort of problems in the e-file </div>
+
+    <div id="board3" style="width: 400px;"></div>
+
+<button onclick="nextMove3()">Next Move</button>
+
+<script>
+const game3 = new Chess();
+
+const moves3 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Be7"
+];
+
+let moveNumber3 = 0;
+
+const board3 = Chessboard("board3", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove3() {
+  if (moveNumber3 >= moves3.length) {
+    return;
+  }
+
+  game3.move(moves3[moveNumber3]);
+
+  moveNumber3++;
+
+  board3.position(game3.fen(), true);
+}
+</script>
+
+<h5> OPEN VARIATION 5... Nxe4</h5>
+<div class="box"> The sharp, principled try. Black grabs the e4-pawn and accepts a freer but looser game.</div>
+
+
+<div id="board4" style="width: 400px;"></div>
+
+<button onclick="nextMove4()">Next Move</button>
+
+<script>
+const game4 = new Chess();
+
+const moves4 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Nxe4"
+];
+
+let moveNumber4 = 0;
+
+const board4 = Chessboard("board4", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove4() {
+  if (moveNumber4 >= moves4.length) {
+    return;
+  }
+
+  game4.move(moves4[moveNumber4]);
+
+  moveNumber4++;
+
+  board4.position(game4.fen(), true);
+}
+</script>
+
+ <div class="box"> After <div class="moves"> b5 <br>7.Bb3 d5 <br>8.dxe5 Be6<br> </div> the centre cracks open, Black’s pieces breathe, and both sides play with real menace. The Open is the choice for those who refuse to sit still under the Spanish Torture and want the rival’s king in range early.</div>
+
+ 
+<div id="board5" style="width: 400px;"></div>
+
+<button onclick="nextMove5()">Next Move</button>
+
+<script>
+const game5 = new Chess();
+
+const moves5 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Nxe4",
+  "d4", "b5",
+  "Bb3", "d5",
+  "dxe5", "Be6"
+];
+
+let moveNumber5 = 0;
+
+const board5 = Chessboard("board5", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove5() {
+  if (moveNumber5 >= moves5.length) {
+    return;
+  }
+
+  game5.move(moves5[moveNumber5]);
+
+  moveNumber5++;
+
+  board5.position(game5.fen(), true);
+}
+</script>
+
+
+<h3> BERLIN DEFENCE  3...Nf6 </h3>
+
+<div class="box">The great equaliser of modern chess, made famous when Kramnik used it to hold Kasparov in 2000 </div>
+
+
+<div id="board6" style="width: 400px;"></div>
+
+<button onclick="nextMove6()">Next Move</button>
+
+<script>
+const game6 = new Chess();
+
+const moves6 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "Nf6"
+];
+
+let moveNumber6 = 0;
+
+const board6 = Chessboard("board6", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove6() {
+  if (moveNumber6 >= moves6.length) {
+    return;
+  }
+
+  game6.move(moves6[moveNumber6]);
+
+  moveNumber6++;
+
+  board6.position(game6.fen(), true);
+}
+</script>
+
+<div class="box"> After <div class="moves">  4.O-O Nxe4 <br>5.d4 Nd6 <br>  6.Bxc6 dxc6 <br> 7.dxe5 Nf5 <br> 8.Qxd8+ Kxd8 </div> queens come off at once and Black heads for the famously firm “Berlin Wall” endgame. Dry, solid, and a nightmare to break down.</div>
+
+
+<div id="board7" style="width: 400px;"></div>
+
+<button onclick="nextMove7()">Next Move</button>
+
+<script>
+const game7 = new Chess();
+
+const moves7 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "Nf6",
+  "O-O", "Nxe4",
+  "d4", "Nd6",
+  "Bxc6", "dxc6",
+  "dxe5", "Nf5",
+  "Qxd8+", "Kxd8"
+];
+
+let moveNumber7 = 0;
+
+const board7 = Chessboard("board7", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove7() {
+  if (moveNumber7 >= moves7.length) {
+    return;
+  }
+
+  game7.move(moves7[moveNumber7]);
+
+  moveNumber7++;
+
+  board7.position(game7.fen(), true);
+}
+</script>
+
+
+<h3> SCHLIEMANN (JAENISCH) GAMBIT 3... f5 </h3>
+
+<div id="board8" style="width: 400px;"></div>
+
+<button onclick="nextMove8()">Next Move</button>
+
+<script>
+const game8 = new Chess();
+
+const moves8 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "f5"
+];
+
+let moveNumber8 = 0;
+
+const board8 = Chessboard("board8", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove8() {
+  if (moveNumber8 >= moves8.length) {
+    return;
+  }
+
+  game8.move(moves8[moveNumber8]);
+
+  moveNumber8++;
+
+  board8.position(game8.fen(), true);
+}
+</script>
+
+<div class="box"> Black strikes at the centre on move three and dares White into chaos. Objectively risky, but a fearsome surprise weapon below master level, where few opponents know the refutation.</div>
+
+<h2> CLASSICAL DEFENCE 3...Bc5 </h2>
+
+<div class="box"> black develops naturally and focuss on the f2 dquare . its easy to play on understanding rather than memory</div>
+
+<div id="board9" style="width: 400px;"></div>
+
+<button onclick="nextMove9()">Next Move</button>
+
+<script>
+const game9 = new Chess();
+
+const moves9 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "Bc5"
+];
+
+let moveNumber9 = 0;
+
+const board9 = Chessboard("board9", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove9() {
+  if (moveNumber9 >= moves9.length) {
+    return;
+  }
+
+  game9.move(moves9[moveNumber9]);
+
+  moveNumber9++;
+
+  board9.position(game9.fen(), true);
+}
+</script>
+
+<div class="box"> It is one of the moves considered to be most flexible in Ruy Lopez and the line begins after Black plays 3…Bc5</div>
+
+<div class="box"> White has several options here and often chooses one of the two common moves (4. O-O and 4. c3)</div>
+
+<div class="box"> Castling is played in high-level play as it prepares to press on the center. 4. c3 typically prepares 5. d4.</div>
+ <div class="box"> After 4. c3 (also called the Central Variation), the most principled route to go as Black is 4…Nf6.</div>
+
+ <div class="box"> Against an attempt such as 4…d6, 5.d4 holds an immediate menace on Bc4, and the following action is d5 and exploiting the pin on the a4-e8 diagonal</div>
+ <br> 
+
+
+ <div id="board10" style="width: 400px;"></div>
+
+<button onclick="nextMove10()">Next Move</button>
+
+<script>
+const game10 = new Chess();
+
+const moves10 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "Bc5",
+  "c3", "d6",
+  "d4", "exd4",
+  "cxd4", "Bb4+",
+  "Kf1", "a6",
+  "Bxc6+", "bxc6",
+  "Qa4"
+];
+
+let moveNumber10 = 0;
+
+const board10 = Chessboard("board10", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove10() {
+  if (moveNumber10 >= moves10.length) {
+    return;
+  }
+
+  game10.move(moves10[moveNumber10]);
+
+  moveNumber10++;
+
+  board10.position(game10.fen(), true);
+}
+</script>
+
+
+<h3> OR THIS ASWELL</h3>
+
+<div id="board11" style="width: 400px;"></div>
+
+<button onclick="nextMove11()">Next Move</button>
+
+<script>
+const game11 = new Chess();
+
+const moves11 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "Bc5",
+  "c3", "d6",
+  "d4", "exd4",
+  "cxd4", "Bb6",
+  "d5", "Kf1",
+  "a6", "Bxc6+",
+  "bxc6", "Qa4"
+];
+
+let moveNumber11 = 0;
+
+const board11 = Chessboard("board11", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove11() {
+  if (moveNumber11 >= moves11.length) {
+    return;
+  }
+
+  game11.move(moves11[moveNumber11]);
+
+  moveNumber11++;
+
+  board11.position(game11.fen(), true);
+}
+</script>
+
+
+<div class="box"> After 4. c3 Nf6, White has several options (such as 5. O-O, 5.d4 or 5. d3). 5.d4 is probably the most forcing line since if the opponent doesn’t react, they are already significantly worse because of White’s central supremacy.
+  </div>
+<div class="box"> One possible playable line is 5. d4 exd4 6. e5 (assaulting the Knight and pushing it away, it is essential not to put the Knight into a wrong square such as g8 or g4, which can limit its options)  </div>
+
+<div id="board12" style="width: 400px;"></div>
+
+<button onclick="nextMove12()">Next Move</button>
+
+<script>
+const game12 = new Chess();
+
+const moves12 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "Bc5",
+  "c3", "Nf6",
+  "d4", "exd4",
+  "e5", "Nd5"
+];
+
+let moveNumber12 = 0;
+
+const board12 = Chessboard("board12", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove12() {
+  if (moveNumber12 >= moves12.length) {
+    return;
+  }
+
+  game12.move(moves12[moveNumber12]);
+
+  moveNumber12++;
+
+  board12.position(game12.fen(), true);
+}
+</script>
+
+
+<hr> 
+<h4> EXCHANGE VARIATION 4 Bxc6 </h4>
+
+<DIV class="box"> As one of the firmest lines in Ruy Lopez, this one starts with 3…a6, followed by 4. Bxc6 and dxc6. By taking on c6, Black remains with ruined pawns but gains a two-bishop benefit 
+</DIV>
+
+<div class="box"> The game can easily transition to an endgame after 5. d4 exd4 6. Qxd4. White usually prefers this line when they want to simplify the position and aim for an equal endgame </div>
+
+<div id="board13" style="width: 400px;"></div>
+
+<button onclick="nextMove13()">Next Move</button>
+
+<script>
+const game13 = new Chess();
+
+const moves13 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Bxc6", "dxc6",
+  "d4", "exd4",
+  "Qxd4"
+];
+
+let moveNumber13 = 0;
+
+const board13 = Chessboard("board13", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove13() {
+  if (moveNumber13 >= moves13.length) {
+    return;
+  }
+
+  game13.move(moves13[moveNumber13]);
+
+  moveNumber13++;
+
+  board13.position(game13.fen(), true);
+}
+</script>
+
+<div class="box"> here Nxe5 is a mistake due to 5 Qd4 and after 5 0-0 the e5 is under attack this needs to be dealt with by playing 5 Qf6 or 5 Bd6 . </div>
+
+<div class="box"> in the meantime white usally has plans of going 6 d4 to improve their position. one sample line is 5 0-0 Bd6 that protects the e5 followed by 6 d4 exd4  7 Qxd4 (attacking the g7 square and giving threat of e5 against Nf6) and 7 f6 </div>
+
+<div id="board14" style="width: 400px;"></div>
+
+<button onclick="nextMove14()">Next Move</button>
+
+<script>
+const game14 = new Chess();
+
+const moves14 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Bxc6", "dxc6",
+  "O-O", "Nxe5",
+  "d4", "exd4",
+  "Qxd4", "f6"
+];
+
+let moveNumber14 = 0;
+
+const board14 = Chessboard("board14", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove14() {
+  if (moveNumber14 >= moves14.length) {
+    return;
+  }
+
+  game14.move(moves14[moveNumber14]);
+
+  moveNumber14++;
+
+  board14.position(game14.fen(), true);
+}
+</script>
+
+
+<h3> STEINITZ DEFENSE 3 Bb5 d6 d4 </h3><hr>
+
+  <div id="board15" style="width: 400px;"></div>
+
+<button onclick="nextMove15()">Next Move</button>
+
+<script>
+const game15 = new Chess();
+
+const moves15 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "d6",
+  "d4"
+];
+
+let moveNumber15 = 0;
+
+const board15 = Chessboard("board15", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove15() {
+  if (moveNumber15 >= moves15.length) {
+    return;
+  }
+
+  game15.move(moves15[moveNumber15]);
+
+  moveNumber15++;
+
+  board15.position(game15.fen(), true);
+}
+</script>
+
+
+<div class="box"> The line starts as 3…d6 to support e5, and 4. d4 intends to oppress e5. The primary goal of the Steinitz Defense is to maximize the space by attacking e5 
+</div>
+
+<div class="box"> Since the Knight is under threat, it is advised to unpin it by going 4…Bd7 and removing the attacker by 4…exd4 
+</div>
+
+<div id="board16" style="width: 400px;"></div>
+
+<button onclick="nextMove16()">Next Move</button>
+
+<script>
+const game16 = new Chess();
+
+const moves16 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "d6",
+  "d4", "Bd7",
+  "dxe5", "dxe5"
+];
+
+let moveNumber16 = 0;
+
+const board16 = Chessboard("board16", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove16() {
+  if (moveNumber16 >= moves16.length) {
+    return;
+  }
+
+  game16.move(moves16[moveNumber16]);
+
+  moveNumber16++;
+
+  board16.position(game16.fen(), true);
+}
+</script>
+
+
+<div class="box">  The Modern Steinitz Defense, which includes 3…a6 (the novelty), 4. Ba4 d6 and 5. d4, is considered an improved version of the old Steinitz.</div>
+
+<div id="board17" style="width: 400px;"></div>
+
+<button onclick="nextMove17()">Next Move</button>
+
+<script>
+const game17 = new Chess();
+
+const moves17 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "d6",
+  "d4"
+];
+
+let moveNumber17 = 0;
+
+const board17 = Chessboard("board17", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove17() {
+  if (moveNumber17 >= moves17.length) {
+    return;
+  }
+
+  game17.move(moves17[moveNumber17]);
+
+  moveNumber17++;
+
+  board17.position(game17.fen(), true);
+}
+</script>
+<hr>
+
+<h3> CLOSED RUY LOPEZ 5 Be7</h3>
+
+<div class="box"> the classical main line and the soul of the opening </div>
+
+<div id="board18" style="width: 400px;"></div>
+
+<button onclick="nextMove18()">Next Move</button>
+
+<script>
+const game18 = new Chess();
+
+const moves18 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Be7",
+  "Re1", "b5",
+  "Bb3", "d6",
+  "c3", "O-O"
+];
+
+let moveNumber18 = 0;
+
+const board18 = Chessboard("board18", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove18() {
+  if (moveNumber18 >= moves18.length) {
+    return;
+  }
+
+  game18.move(moves18[moveNumber18]);
+
+  moveNumber18++;
+
+  board18.position(game18.fen(), true);
+}
+</script>
+
+<div class="box"> black keeps the centre closed and waits while white builds the c3 d4 pawn duo and reroutes the knight  <div class="moves">   Nb1-d2-f1-g3,</div> the famous spanish manoeurve to pile up on the kingside  </div>
+
+<hr> 
+<h3> MARSHALL ATTACK </h3>
+
+<DIV class="box"> Black’s most famous counter-blow: a whole pawn for a raging attack.</DIV>
+
+<div id="board19" style="width: 400px;"></div>
+
+<button onclick="nextMove19()">Next Move</button>
+
+<script>
+const game19 = new Chess();
+
+const moves19 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Be7",
+  "Re1", "b5",
+  "Bb3", "O-O",
+  "c3", "d5"
+];
+
+let moveNumber19 = 0;
+
+const board19 = Chessboard("board19", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove19() {
+  if (moveNumber19 >= moves19.length) {
+    return;
+  }
+
+  game19.move(moves19[moveNumber19]);
+
+  moveNumber19++;
+
+  board19.position(game19.fen(), true);
+}
+</script>
+
+<div class="box"> After 9.exd5 Nxd5 10.Nxe5 Nxe5 11.Rxe5 c6 Black throws every piece at the white king while down material </div>
+
+<div class="box"> It is so sound that many White players sidestep it entirely with an Anti-Marshall <div class="moves"> 8.a4 or 8.h3 </div> rather than walk into the prepared lines. </div>
+
+<div id="board20" style="width: 400px;"></div>
+
+<button onclick="nextMove20()">Next Move</button>
+
+<script>
+const game20 = new Chess();
+
+const moves20 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Be7",
+  "Re1", "b5",
+  "Bb3", "O-O",
+  "c3", "d5",
+  "exd5", "Nxd5",
+  "Nxe5", "Nxe5",
+  "Rxe5", "c6"
+];
+
+let moveNumber20 = 0;
+
+const board20 = Chessboard("board20", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove20() {
+  if (moveNumber20 >= moves20.length) {
+    return;
+  }
+
+  game20.move(moves20[moveNumber20]);
+
+  moveNumber20++;
+
+  board20.position(game20.fen(), true);
+}
+</script>
+<hr>
+
+
+<div class="note"> THESE ARE ALL THE LINES FOR NOW MIGHT BE UPDATED SOON</div>
+
+<BR>
+
+<H1> SOME GAMES PLAYED WITH RUY LOPEZ </H1>
+
+<H2> GAME 1 
+  <BR> Alexander Alekhine vs Gedeon Barcza
+ <BR> SCORE: 1-0
+</H2>
+
+<div id="board21" style="width: 400px;"></div>
+
+<button onclick="nextMove21()">Next Move</button>
+
+<script>
+const game21 = new Chess();
+
+const moves21 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Ba4", "Nf6",
+  "O-O", "Be7",
+  "Nc3", "b5",
+  "Bb3", "d6",
+  "Nd5", "Bg4",
+  "c3", "O-O",
+  "h3", "Be6",
+  "d4", "Kh8",
+  "Re1", "Nd7",
+  "Bc2", "f6",
+  "a4", "Na7",
+  "axb5", "axb5",
+  "Be3", "c5",
+  "dxc5", "dxc5",
+  "Ra6", "Bxd5",
+  "exd5", "Qc8",
+  "Qa1", "Qb7",
+  "b4", "Rfb8",
+  "d6", "Bd8",
+  "bxc5", "Rc8",
+  "Ra2", "e4",
+  "Bxe4", "Qxe4",
+  "Bd4", "Qg6",
+  "Rxa7", "Rxa7",
+  "Qxa7", "Ne5",
+  "Bxe5"
+];
+
+let moveNumber21 = 0;
+
+const board21 = Chessboard("board21", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove21() {
+  if (moveNumber21 >= moves21.length) {
+    return;
+  }
+
+  game21.move(moves21[moveNumber21]);
+
+  moveNumber21++;
+
+  board21.position(game21.fen(), true);
+}
+</script>
+
+<h2> GAME 2 
+  <BR>Alexander Alekhine vs Akiba Rubinstein
+    <br> 0-1
+</h2>
+
+<div id="board22" style="width: 400px;"></div>
+
+<button onclick="nextMove22()">Next Move</button>
+
+<script>
+const game22 = new Chess();
+
+const moves22 = [
+  "e4", "e5",
+  "Nf3", "Nc6",
+  "Bb5", "a6",
+  "Bxc6", "dxc6",
+  "d3", "f6",
+  "Be3", "Bg4",
+  "Nbd2", "c5",
+  "Nc4", "Bd6",
+  "Qd2", "Ne7",
+  "Qc3", "Nc6",
+  "Nxd6+", "cxd6",
+  "Nd2", "Be6",
+  "f4", "O-O",
+  "Nf3", "Nd4",
+  "Qd2", "d5",
+  "c3", "Nxf3+",
+  "gxf3", "c4",
+  "f5", "Bf7",
+  "Rg1", "Kh8",
+  "dxc4", "dxe4",
+  "fxe4", "Bxc4",
+  "Qg2", "Rf7",
+  "Rd1", "Qc7",
+  "Qc2", "Rd8",
+  "Kf2", "Rfd7",
+  "Qa4", "Bd3",
+  "Qb4", "b5",
+  "Rg4", "Be2",
+  "Rxd7", "Qxd7",
+  "Rg1", "Bh5",
+  "Re1", "Qd3",
+  "Qe7", "h6",
+  "Kg1", "Kh7",
+  "Bf2",
+  "Qh3",
+  "Bd4", "Bf3",
+  "Kf2", "Qg2+",
+  "Ke3", "Bxe4",
+  "Re2", "exd4+",
+  "cxd4", "Qf3+"
+];
+
+let moveNumber22 = 0;
+
+const board22 = Chessboard("board22", {
+  position: "start",
+  pieceTheme:
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+});
+
+function nextMove22() {
+  if (moveNumber22 >= moves22.length) {
+    return;
+  }
+
+  game22.move(moves22[moveNumber22]);
+
+  moveNumber22++;
+
+  board22.position(game22.fen(), true);
+}
+</script>
+
+
+<h2> GAME 3 
+<BR> Jose Raul Capablanca vs Frank Marshall
+  s
+
+<div id="board23" style="width: 400px;"></div>
+
+<button onclick="nextMove23()">Next Move</button>
+
+
+<script>
+
+    const game23 = new Chess();
+const moves23 = [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Bb5",
+    "a6",
+    "Ba4",
+    "Nf6",
+    "O-O",
+    "Be7",
+    "Re1",
+    "b5",
+    "Bb3",
+    "O-O",
+    "c3",
+    "d5",
+    "exd5",
+    "Nxd5",
+    "Nxe5",
+    "Nxe5",
+    "Rxe5",
+    "Nf6",
+    "Re1",
+    "Bd6",
+    "h3",
+    "Ng4",
+    "Qf3",
+    "Qh4",
+    "d4",
+    "Nxf2",
+    "Re2",
+    "Bg4",
+    "hxg4",
+    "Bh2+",
+    "Kf1",
+    "Bg3",
+    "Rxf2",
+    "Qh1+",
+    "Ke2",
+    "Bxf2",
+    "Bd2",
+    "Bh4",
+    "Qh3",
+    "Rae8+",
+    "Kd3",
+    "Qf1+",
+    "Kc2",
+    "Bf2",
+    "Qf3",
+    "Qg1",
+    "Bd5",
+    "c5",
+    "dxc5",
+    "Bxc5",
+    "b4",
+    "Bd6",
+    "a4",
+    "a5",
+    "axb5",
+    "axb4",
+    "Ra6",
+    "bxc3",
+    "Nxc3",
+    "Bb4",
+    "b6",
+    "Bxc3",
+    "Bxc3",
+    "h6",
+    "b7",
+    "Re3",
+    "Bxf7+"
+];
+
+
+
+    let moveNumber23 = 0;
+
+    const board23 = Chessboard("board23", {
+
+        position: "start",
+
+        pieceTheme:
+        "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+
+    });
+
+
+    function nextMove23() {
+
+        if (moveNumber23 >= moves23.length) {
+            return;
+        }
+
+        game23.move(moves23[moveNumber23]);
+
+        moveNumber23++;
+
+        board23.position(game23.fen(), true);
+
+    }
+
+</script>
+
+
+
+<h2> GAME 4
+  <br>
+  Hugh Kennedy vs Edward Lowe </h2>
+
+<div id="board24" style="width: 400px;"></div>
+
+<button onclick="nextMove24()">Next Move</button>
+
+<script>
+    const game24 = new Chess();
+
+    const moves24 = [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "Qf6",
+        "Bxc6",
+        "bxc6",
+        "O-O",
+        "Bc5",
+        "c3",
+        "d5",
+        "d4",
+        "dxe4",
+        "Nxe5",
+        "Bb6",
+        "Nd2",
+        "Bf5",
+        "Qe2",
+        "Qe6",
+        "b3",
+        "f6",
+        "Nec4",
+        "O-O-O",
+        "Re1",
+        "Nh6",
+        "Nxe4",
+        "Rhe8",
+        "Ng3",
+        "Qxe2",
+        "Nxe2",
+        "Bd3",
+        "Nxb6+",
+        "cxb6",
+        "Bxh6",
+        "gxh6",
+        "Nf4",
+        "Bf5",
+        "Nh5",
+        "Rf8",
+        "Re7",
+        "Rd7",
+        "Rae1",
+        "Kd8",
+        "R7e3",
+        "Bg4",
+        "Nf4",
+        "Rg7",
+        "c4",
+        "Rff7",
+        "Re8+",
+        "Kd7",
+        "Ra8",
+        "a5",
+        "h3",
+        "Bf5",
+        "Nh5",
+        "Kd6",
+        "Nxg7",
+        "Rxg7",
+        "Kh2",
+        "Bd7",
+        "Ra7",
+        "Rg5",
+        "f4"
+    ];
+
+    let moveNumber24 = 0;
+
+    const board24 = Chessboard("board24", {
+        position: "start",
+        pieceTheme:
+        "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+    });
+
+    function nextMove24() {
+        if (moveNumber24 >= moves24.length) {
+            return;
+        }
+
+        game24.move(moves24[moveNumber24]);
+
+        moveNumber24++;
+
+        board24.position(game24.fen(), true);
+    }
+</script>
+
+<H2>GAME 5 
+  <BR>
+    Mikhail Tal vs Johann Hjartarson
+</H2>
+
+<div id="board25" style="width: 400px;"></div>
+
+<button onclick="nextMove25()">Next Move</button>
+
+<script>
+    const game25 = new Chess();
+
+    const moves25 = [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6",
+        "Ba4",
+        "Nf6",
+        "O-O",
+        "Be7",
+        "Re1",
+        "b5",
+        "Bb3",
+        "O-O",
+        "c3",
+        "d6",
+        "h3",
+        "Na5",
+        "Bc2",
+        "c5",
+        "d4",
+        "Qc7",
+        "Nbd2",
+        "Bd7",
+        "Nf1",
+        "cxd4",
+        "cxd4",
+        "Rac8",
+        "Ne3",
+        "Nc6",
+        "d5",
+        "Nb4",
+        "Bb1",
+        "a5",
+        "a3",
+        "Na6",
+        "b4",
+        "g6",
+        "Bd2",
+        "axb4",
+        "axb4",
+        "Qb7",
+        "Bd3",
+        "Nc7",
+        "Nc2",
+        "Nh5",
+        "Be3",
+        "Ra8",
+        "Qd2",
+        "Rxa1",
+        "Nxa1",
+        "f5",
+        "Bh6",
+        "Ng7",
+        "Nb3",
+        "f4",
+        "Na5",
+        "Qb6",
+        "Rc1",
+        "Ra8",
+        "Qc2",
+        "Nce8",
+        "Qb3",
+        "Bf6",
+        "Nc6",
+        "Nh5",
+        "Qb2",
+        "Bg7",
+        "Bxg7",
+        "Kxg7",
+        "Rc5",
+        "Qa6",
+        "Rxb5",
+        "Nc7",
+        "Rb8",
+        "Qxd3",
+        "Ncxe5",
+        "Qd1+",
+        "Kh2",
+        "Ra1",
+        "Ng4+",
+        "Kf7",
+        "Nh6+",
+        "Ke7",
+        "Ng8+"
+    ];
+
+    let moveNumber25 = 0;
+
+    const board25 = Chessboard("board25", {
+        position: "start",
+        pieceTheme:
+        "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+    });
+
+    function nextMove25() {
+        if (moveNumber25 >= moves25.length) {
+            return;
+        }
+
+        game25.move(moves25[moveNumber25]);
+
+        moveNumber25++;
+
+        board25.position(game25.fen(), true);
+    }
+</script>
+
+
+
+<H2> GAME 5 <BR> 
+  
+  Garry Kasparov vs Anatoly Karpov </H2>
+
+<div id="board26" style="width: 400px;"></div>
+
+<button onclick="nextMove26()">Next Move</button>
+
+<script>
+    const game26 = new Chess();
+
+    const moves26 = [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6",
+        "Ba4",
+        "Nf6",
+        "O-O",
+        "Be7",
+        "Re1",
+        "b5",
+        "Bb3",
+        "d6",
+        "c3",
+        "O-O",
+        "h3",
+        "Bb7",
+        "d4",
+        "Re8",
+        "Nbd2",
+        "Bf8",
+        "a4",
+        "h6",
+        "Bc2",
+        "exd4",
+        "cxd4",
+        "Nb4",
+        "Bb1",
+        "c5",
+        "d5",
+        "Nd7",
+        "Ra3",
+        "f5",
+        "Rae3",
+        "Nf6",
+        "Nh2",
+        "Kh8",
+        "b3",
+        "bxa4",
+        "bxa4",
+        "c4",
+        "Bb2",
+        "fxe4",
+        "Nxe4",
+        "Nfxd5",
+        "Rg3",
+        "Re6",
+        "Ng4",
+        "Qe8",
+        "Nxh6",
+        "c3",
+        "Nf5",
+        "cxb2",
+        "Qg4",
+        "Bc8",
+        "Qh4+",
+        "Rh6",
+        "Nxh6",
+        "gxh6",
+        "Kh2",
+        "Qe5",
+        "Ng5",
+        "Qf6",
+        "Re8",
+        "Bf5",
+        "Qxh6+",
+        "Qxh6",
+        "Nf7+",
+        "Kh7",
+        "Bxf5+",
+        "Qg6",
+        "Bxg6+",
+        "Kg7",
+        "Rxa8",
+        "Be7",
+        "Rb8",
+        "a5",
+        "Be4+",
+        "Kxf7",
+        "Bxd5+"
+    ];
+
+    let moveNumber26 = 0;
+
+    const board26 = Chessboard("board26", {
+        position: "start",
+        pieceTheme:
+        "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+    });
+
+    function nextMove26() {
+        if (moveNumber26 >= moves26.length) {
+            return;
+        }
+
+        game26.move(moves26[moveNumber26]);
+
+        moveNumber26++;
+
+        board26.position(game26.fen(), true);
+    }
+</script>
+
+<h2> GAME 6 </h2>
+
+<div id="board27" style="width: 400px;"></div>
+
+<button onclick="nextMove27()">Next Move</button>
+
+<script>
+    const game27 = new Chess();
+
+    const moves27 = [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6",
+        "Bxc6",
+        "dxc6",
+        "d4",
+        "exd4",
+        "Qxd4",
+        "Qxd4",
+        "Nxd4",
+        "Bd6",
+        "Nc3",
+        "Ne7",
+        "O-O",
+        "O-O",
+        "f4",
+        "Re8",
+        "Nb3",
+        "f6",
+        "f5",
+        "b6",
+        "Bf4",
+        "Bb7",
+        "Bxd6",
+        "cxd6",
+        "Nd4",
+        "Rad8",
+        "Ne6",
+        "Rd7",
+        "Rad1",
+        "Nc8",
+        "Rf2",
+        "b5",
+        "Rfd2",
+        "Rde7",
+        "b4",
+        "Kf7",
+        "a3",
+        "Ba8",
+        "Kf2",
+        "Ra7",
+        "g4",
+        "h6",
+        "Rd3",
+        "a5",
+        "h4",
+        "axb4",
+        "axb4",
+        "Rae7",
+        "Kf3",
+        "Rg8",
+        "Kf4",
+        "g6",
+        "Rg3",
+        "g5+",
+        "Kf3",
+        "Nb6",
+        "hxg5",
+        "hxg5",
+        "Rh3",
+        "Rd7",
+        "Kg3",
+        "Ke8",
+        "Rdh1",
+        "Bb7",
+        "e5",
+        "dxe5",
+        "Ne4",
+        "Nd5",
+        "N6c5",
+        "Bc8",
+        "Nxd7",
+        "Bxd7",
+        "Rh7",
+        "Rf8",
+        "Ra1",
+        "Kd8",
+        "Ra8+",
+        "Bc8",
+        "Nc5"
+    ];
+
+    let moveNumber27 = 0;
+
+    const board27 = Chessboard("board27", {
+        position: "start",
+        pieceTheme:
+        "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png"
+    });
+
+    function nextMove27() {
+        if (moveNumber27 >= moves27.length) {
+            return;
+        }
+
+        game27.move(moves27[moveNumber27]);
+
+        moveNumber27++;
+
+        board27.position(game27.fen(), true);
+    }
+</script>
+
+</body>
+</html>

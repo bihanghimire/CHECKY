@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>CHESS</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<LINK rel="FUNCTIONALITY" href="SCRIPT.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        
+  <script>
+
+function toggleOpenings() {
+
+    const menu = document.getElementById("opening-menu");
+    const button = document.querySelector(".side-dropdown");
+
+    if (menu.style.maxHeight) {
+
+        
+        menu.style.maxHeight = null;
+        button.classList.remove("open");
+
+    } else {
+
+        // OPEN
+        menu.style.maxHeight = menu.scrollHeight + "px";
+        button.classList.add("open");
+
+    }
+
+}
+
+</script>
+  <div class="sidebar">
+
+    <div class="sidebar-title">
+        ♟ CHECKY
+    </div>
+
+    <a href="index.html" class="side-link">
+        🏠 HOME
+    </a>
+    <button class="side-dropdown" onclick="toggleOpenings()">
+        📖 OPENINGS
+        <span id="opening-arrow">▼</span>
+    </button>
+
+    <div id="opening-menu" class="side-submenu">
+
+        <a href="openings by white.html">
+            ♙ OPENINGS BY WHITE
+        </a>
+
+        <a href="openings by black.html">
+            ♟ OPENINGS BY BLACK
+        </a>
+
+    </div>
+
+    <a href="endgames.html" class="side-link">
+        ♜ ENDGAMES
+    </a>
+
+    <a href="tactics.html" class="side-link">
+        ⚔ TACTICS
+    </a>
+
+</div>
+      <h1> OPENINGS </h1>
+      <div class="box">A chess opening is the first part of a chess game, where both players develop their pieces and fight for control of the center. <BR> The main goals of an opening are:<br> * Control the center — especially the squares e4, d4, e5, and d5.,<br> *Develop your pieces — bring your knights and bishops into useful positions.  
+    <br> * Protect your king — usually by castling. <br> * Develop quickly — avoid moving the same piece repeatedly without a good reason. </div>  
+<div class="box">  in this  website openings will be classified into two major types . that are openings played with white and those played with black    
+ <br> <br> <div class="openings"><a href="openings by white.html"> OPENINGS BY WHITE</a>  </div>        <a href="openings by black.html"> <div class="openings"> OPENINGS BY BLACK </a></div></div>
+</body>
+</html>
