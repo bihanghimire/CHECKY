@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KING'S GAMBIT!!</title>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #board, .chess-board {
+            width: 400px;
+            max-width: 100%;
+            margin: 15px 0;
+        }
+
+        button {
+            margin: 10px 8px 15px 0;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .moves {
+            font-weight: bold;
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+
+        .box {
+            margin: 18px 0;
+        }
+
+        .variation {
+            margin: 30px 0;
+        }
+
+        @media (max-width: 480px) {
+            #board, .chess-board {
+                width: 94vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<script>
+function toggleOpenings() {
+    const menu = document.getElementById("opening-menu");
+    const button = document.querySelector(".side-dropdown");
+
+    if (menu.style.maxHeight) {
+        menu.style.maxHeight = null;
+        button.classList.remove("open");
+    } else {
+        menu.style.maxHeight = menu.scrollHeight + "px";
+        button.classList.add("open");
+    }
+}
+</script>
+
+<div class="sidebar">
+    <div class="sidebar-title">♟ CHECKY</div>
+
+    <a href="index.html" class="side-link">🏠 HOME</a>
+
+    <button class="side-dropdown" onclick="toggleOpenings()">
+        📖 OPENINGS <span id="opening-arrow">▼</span>
+    </button>
+
+    <div id="opening-menu" class="side-submenu">
+        <a href="openings by white.html">♙ OPENINGS BY WHITE</a>
+        <a href="openings by black.html">♟ OPENINGS BY BLACK</a>
+    </div>
+
+    <a href="endgames.html" class="side-link">♜ ENDGAMES</a>
+    <a href="tactics.html" class="side-link">⚔ TACTICS</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+
+<main>
+    <h1>♟ THE KING'S GAMBIT!!</h1>
+
+    <div class="box">
+        The King's Gambit is one of chess's classic attacking openings. It begins with
+        <div class="moves">1. e4 e5 2. f4</div>
+        White offers the f-pawn to pull Black's e-pawn away from the centre, open lines,
+        and build an attack. It's bold, risky, and absolutely not for people who want a
+        quiet life. 😭
+    </div>
+
+    <h2>SOME MORE YAP ABOUT THE KING'S GAMBIT</h2>
+
+    <div class="box">
+        The idea is simple: White gives up a pawn for rapid development and attacking
+        chances. If Black accepts with 2...exf4, White usually develops with 3.Nf3,
+        stopping the annoying ...Qh4+ idea while preparing to build a strong centre.
+        Black can accept the pawn, return it to develop quickly, or counterattack in
+        the centre.
+    </div>
+
+    <div class="box">
+        The King's Gambit was especially popular in the romantic era of chess, when
+        players loved open positions, sacrifices, and direct attacks on the king.
+        It is less common at top level today, but it remains a fun practical weapon
+        when you understand the ideas behind it.
+    </div>
+
+    <hr>
+    <h1>TIME FOR THE FUN PART: OPENING MOVES AND MAIN LINES</h1>
+
+    <section class="variation">
+        <h2>1. THE STARTING POSITION</h2>
+        <div class="box">
+            White starts with <strong>1.e4</strong>, Black replies <strong>1...e5</strong>,
+            and White offers the gambit with <strong>2.f4</strong>.
+            Black now has a choice: accept the pawn or decline the gambit.
+        </div>
+        <div class="moves">1. e4 e5 2. f4</div>
+        <div id="board1" class="chess-board"></div>
+        <button onclick="nextMove1()">Next Move</button>
+        <button onclick="resetMove1()">Reset Board</button>
+    </section>
+
+    <hr>
+
+    <section class="variation">
+        <h2>2. KING'S GAMBIT ACCEPTED — KIESERITZKY GAMBIT</h2>
+        <div class="box">
+            Black accepts the pawn with <strong>2...exf4</strong>. White develops the
+            knight with <strong>3.Nf3</strong>, then challenges Black's kingside pawn
+            chain with <strong>4.h4</strong>. After ...g4, White jumps to e5 and keeps
+            pressure on f7. Both sides need to be accurate.
+        </div>
+        <div class="moves">
+            1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 Nf6 6. Bc4 d5 7. exd5 Bd6 8. d4
+        </div>
+        <div id="board2" class="chess-board"></div>
+        <button onclick="nextMove2()">Next Move</button>
+        <button onclick="resetMove2()">Reset Board</button>
+    </section>
+
+    <hr>
+
+    <section class="variation">
+        <h2>3. THE MUZIO GAMBIT — CHAOS MODE</h2>
+        <div class="box">
+            The Muzio Gambit is one of the wildest King's Gambit lines. White castles
+            early even though Black's g-pawn can capture the knight on f3. White then
+            recaptures with the queen and tries to use rapid development and open lines
+            to compensate for the sacrificed material. This is sharp chess, not a
+            free lunch. 💀
+        </div>
+        <div class="moves">
+            1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O gxf3 6. Qxf3 Qf6
+            7. e5 Qxe5 8. Bxf7+ Kxf7 9. d4 Qxd4+ 10. Be3 Qf6 11. Bxf4
+        </div>
+        <div id="board3" class="chess-board"></div>
+        <button onclick="nextMove3()">Next Move</button>
+        <button onclick="resetMove3()">Reset Board</button>
+    </section>
+
+    <hr>
+
+    <section class="variation">
+        <h2>4. FISCHER DEFENSE — GIVE THE PAWN BACK</h2>
+        <div class="box">
+            Instead of trying to cling to the extra pawn with ...g5, Black can play
+            <strong>3...d6</strong>. This is the Fischer Defense. Black reinforces the
+            centre, makes the e5-square harder for White to use, and aims to finish
+            development safely. Sometimes the best way to defend a pawn is to stop
+            obsessing over it.
+        </div>
+        <div class="moves">
+            1. e4 e5 2. f4 exf4 3. Nf3 d6 4. d4 g5 5. h4 g4 6. Ng1 Qf6 7. Nc3 Ne7
+        </div>
+        <div id="board4" class="chess-board"></div>
+        <button onclick="nextMove4()">Next Move</button>
+        <button onclick="resetMove4()">Reset Board</button>
+    </section>
+
+    <hr>
+
+    <section class="variation">
+        <h2>5. MODERN (ABBAZIA) DEFENSE</h2>
+        <div class="box">
+            Black can return the gambit pawn and immediately fight for the centre with
+            <strong>3...d5</strong>. After the exchange on d5, Black develops the knight
+            and challenges White's centre. This is a practical way to reduce White's
+            attacking momentum instead of trying to hold on to every pawn.
+        </div>
+        <div class="moves">
+            1. e4 e5 2. f4 exf4 3. Nf3 d5 4. exd5 Nf6 5. Bb5+ c6 6. dxc6 Nxc6
+            7. d4 Bd6 8. O-O O-O 9. Nbd2 Bg4 10. c3
+        </div>
+        <div id="board5" class="chess-board"></div>
+        <button onclick="nextMove5()">Next Move</button>
+        <button onclick="resetMove5()">Reset Board</button>
+    </section>
+
+    <hr>
+
+    <section class="variation">
+        <h2>6. FALКBEER COUNTERGAMBIT — FIGHT FIRE WITH FIRE</h2>
+        <div class="box">
+            Black can decline the gambit with <strong>2...d5</strong>, immediately
+            counterattacking in the centre. This is the Falkbeer Countergambit.
+            White can capture on d5, but Black aims for active piece play and central
+            pressure. The message is clear: White doesn't get to be the only aggressive
+            player in the game.
+        </div>
+        <div class="moves">
+            1. e4 e5 2. f4 d5 3. exd5 c6 4. Qe2 cxd5 5. fxe5 Nc6 6. Nf3
+        </div>
+        <div id="board6" class="chess-board"></div>
+        <button onclick="nextMove6()">Next Move</button>
+        <button onclick="resetMove6()">Reset Board</button>
+    </section>
+
+    <hr>
+
+    <section class="variation">
+        <h2>7. CLASSICAL VARIATION — THE BISHOP STARES AT F2</h2>
+        <div class="box">
+            Black can also decline the gambit by developing the bishop to c5.
+            White's natural reply is <strong>3.Nf3</strong>, protecting against
+            tactical ideas involving ...Qh4+ and developing a piece. White can then
+            prepare d4 and build a strong centre.
+        </div>
+        <div class="moves">
+            1. e4 e5 2. f4 Bc5 3. Nf3 d6 4. c3 Nc6 5. d4 exd4 6. cxd4 Bb6 7. Nc3 f5
+        </div>
+        <div id="board7" class="chess-board"></div>
+        <button onclick="nextMove7()">Next Move</button>
+        <button onclick="resetMove7()">Reset Board</button>
+    </section>
+
+    <hr>
+
+    <h2>KEY STRATEGIES AND IDEAS</h2>
+    <div class="box">
+        <strong>Attack with a purpose:</strong> White sacrifices a pawn to gain time,
+        open lines, and attack. Don't just throw pieces at the king and hope for the best.
+        <br><br>
+        <strong>Develop quickly:</strong> Bring your knights and bishops into the game
+        and look for chances to castle. An attack with undeveloped pieces is usually
+        just a donation.
+        <br><br>
+        <strong>Watch the f-file:</strong> After castling kingside, White may be able to
+        use the rook on f1 to pressure Black's king.
+        <br><br>
+        <strong>For Black — stay calm:</strong> You don't have to hold the extra pawn
+        forever. Returning it at the right moment can help you finish development and
+        blunt White's attack.
+        <br><br>
+        <strong>Always check ...Qh4+ ideas:</strong> Moving the f-pawn can loosen White's
+        king, so calculate before grabbing material.
+    </div>
+
+    <h2>QUICK RECAP</h2>
+    <div class="box">
+        <div class="moves">King's Gambit: 1. e4 e5 2. f4</div>
+        <ul>
+            <li><strong>Accepted:</strong> 2...exf4 — Black takes the offered pawn.</li>
+            <li><strong>Fischer Defense:</strong> 3...d6 — Black reinforces the centre.</li>
+            <li><strong>Modern Defense:</strong> 3...d5 — Black strikes back immediately.</li>
+            <li><strong>Falkbeer Countergambit:</strong> 2...d5 — Black counters on move two.</li>
+            <li><strong>Classical Variation:</strong> 2...Bc5 — Black develops the bishop and eyes f2.</li>
+        </ul>
+    </div>
+
+    <div class="note">
+        THIS IS ENOUGH THEORY FOR NOW. GO PLAY SOME GAMES — AND PLEASE DON'T SACRIFICE YOUR QUEEN BY ACCIDENT. ♟️
+    </div>
+
+</main>
+
+<script>
+const pieceTheme =
+    "https://cdn.jsdelivr.net/gh/oakmac/chessboardjs@1.0.0/website/img/chesspieces/wikipedia/{piece}.png";
+
+const lines = {
+    1: ["e4", "e5", "f4"],
+    2: ["e4", "e5", "f4", "exf4", "Nf3", "g5", "h4", "g4", "Ne5", "Nf6", "Bc4", "d5", "exd5", "Bd6", "d4"],
+    3: ["e4", "e5", "f4", "exf4", "Nf3", "g5", "Bc4", "g4", "O-O", "gxf3", "Qxf3", "Qf6", "e5", "Qxe5", "Bxf7+", "Kxf7", "d4", "Qxd4+", "Be3", "Qf6", "Bxf4"],
+    4: ["e4", "e5", "f4", "exf4", "Nf3", "d6", "d4", "g5", "h4", "g4", "Ng1", "Qf6", "Nc3", "Ne7"],
+    5: ["e4", "e5", "f4", "exf4", "Nf3", "d5", "exd5", "Nf6", "Bb5+", "c6", "dxc6", "Nxc6", "d4", "Bd6", "O-O", "O-O", "Nbd2", "Bg4", "c3"],
+    6: ["e4", "e5", "f4", "d5", "exd5", "c6", "Qe2", "cxd5", "fxe5", "Nc6", "Nf3"],
+    7: ["e4", "e5", "f4", "Bc5", "Nf3", "d6", "c3", "Nc6", "d4", "exd4", "cxd4", "Bb6", "Nc3", "f5"]
+};
+
+const games = {};
+const boards = {};
+const moveNumbers = {};
+
+function setupLine(id) {
+    games[id] = new Chess();
+    moveNumbers[id] = 0;
+    boards[id] = Chessboard("board" + id, {
+        position: "start",
+        pieceTheme: pieceTheme
+    });
+}
+
+function nextMove(id) {
+    if (moveNumbers[id] >= lines[id].length) return;
+
+    const move = games[id].move(lines[id][moveNumbers[id]]);
+    if (!move) {
+        console.error("Illegal move in line " + id + ": " + lines[id][moveNumbers[id]]);
+        return;
+    }
+
+    moveNumbers[id]++;
+    boards[id].position(games[id].fen(), true);
+}
+
+function resetMove(id) {
+    games[id].reset();
+    moveNumbers[id] = 0;
+    boards[id].start();
+}
+
+for (let id = 1; id <= 7; id++) {
+    setupLine(id);
+}
+
+function nextMove1() { nextMove(1); }
+function nextMove2() { nextMove(2); }
+function nextMove3() { nextMove(3); }
+function nextMove4() { nextMove(4); }
+function nextMove5() { nextMove(5); }
+function nextMove6() { nextMove(6); }
+function nextMove7() { nextMove(7); }
+
+function resetMove1() { resetMove(1); }
+function resetMove2() { resetMove(2); }
+function resetMove3() { resetMove(3); }
+function resetMove4() { resetMove(4); }
+function resetMove5() { resetMove(5); }
+function resetMove6() { resetMove(6); }
+function resetMove7() { resetMove(7); }
+</script>
+</body>
+</html>
